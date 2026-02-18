@@ -8,8 +8,8 @@ def index():
 @app.route("/favicon.ico")
 def icon():
     try:
-        file = open("favicon.ico", 'rb').read()
-        return file
+        with open("favicon.ico", "rb") as f:
+            return f.read()
     except:
         return "Not Found",404
 if __name__ == '__main__':
