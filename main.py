@@ -10,8 +10,7 @@ def icon():
     try:
         with open("favicon.ico", "rb") as f:
             return f.read()
-    except:
+    except FileNotFoundError:
         return "Not Found",404
 if __name__ == '__main__':
     app.run()
-
